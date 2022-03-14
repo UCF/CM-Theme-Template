@@ -142,7 +142,7 @@ gulp.task('components', gulp.parallel(
 
 // Lint all theme scss files
 gulp.task('scss-lint-theme', () => {
-  return lintSCSS(`${config.src.scssPath}/*.scss`);
+  return lintSCSS(`${config.src.scssPath}/**/*.scss`);
 });
 
 // Compile theme stylesheet
@@ -160,7 +160,7 @@ gulp.task('css', gulp.series('scss-lint-theme', 'scss-build-theme'));
 
 // Run eslint on js files in src.jsPath
 gulp.task('es-lint-theme', () => {
-  return lintJS([`${config.src.jsPath}/*.js`], config.src.jsPath);
+  return lintJS([`${config.src.jsPath}/**/*.js`], config.src.jsPath);
 });
 
 // Concat and uglify js files through babel
